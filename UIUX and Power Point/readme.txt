@@ -15,8 +15,14 @@ Journey
 	Check off when they visit (check with tracking)
 	
 Pages:
-	-Main page (map of locations)
-	-Menu page (cover 3/4 of page from left to right)
-	-User page(same but from right to left)
-	-Stage page (you click start)
-	-Location page (when clicking on a location, a drag up page)
+	•Main page (map of locations)
+	•Menu page (cover 3/4 of page from left to right)
+		-Settings/Customization:
+			Dark Mode
+		-About Us
+	•User page(same but from right to left)
+	•Stage page (you click start)
+	•Location page (when clicking on a location, a drag up page)
+	
+drag up design
+menu bar design
