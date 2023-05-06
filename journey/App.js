@@ -2,20 +2,71 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, Button } from 'react-native';
 
 
-const App = () => {
+export default App = () => {
 
   const [pages, setPages] = useState([
-    { pageName: 'Home', page: HomePage },
-    { pageName: 'About', page: AboutPage },
-    { pageName: 'Profile', page: ProfilePage },
+    { pagesName: 'Home', pagesFunction: HomePage },
+    { pagesName: 'About', pagesFunction: AboutPage },
+    { pagesName: 'Profile', pagesFunction: ProfilePage },
   ]);
 
-  const [page, setPage] = useState({pageName:'Home',page:HomePage});
+  const [page, setPage] = useState({ pageName: 'Home', pageFunction: HomePage });
 
 
   const clickMenu = () => {
     console.log('clickMenu');
   }
+
+  const Page = page.pageFunction;
+
+
+  const clickButton = (item) => {
+    // console.log(event)
+    if (item) {
+
+      console.log(item.pagesName)
+      setPage({ pageName: item.pagesName, pageFunction: item.pagesFunction })
+    }
+    else {
+      console.log('Undefined item')
+    }
+  }
+
+
+  const Paging = () => {
+    return page.page;
+  }
+
+  const PageSelector = ({ value }) => (
+
+    <View >
+      <View >
+        <Text>{value}</Text>
+      </View>
+    </View>
+
+  );
+
+  const ProfilePage = () => (
+    <View >
+      <Text>Profile</Text>
+    </View>
+  );
+
+
+  const AboutPage = () => (
+    <View >
+      <Text>Profile</Text>
+    </View>
+  );
+
+  const HomePage = () => (
+    <View >
+      <Text>Profile</Text>
+    </View>
+  );
+
+
 
   return (
     <View style={styles.container}>
@@ -24,19 +75,20 @@ const App = () => {
         {
           pages.map((item) => {
             return (
-              <Button title={item.pageName} onPress={(item) => {
-                setPage({pageName:item.pageName,page:item.page})
-              }}/>
+              <Button title={item.pagesName} key={item.pagesName} onPress={() => {
+
+                clickButton(item)
+              }} />
             )
 
           })}
       </View>
 
-        
+
+
       <View style={styles.container}>
-        <Text>THis is {pages.pageName}</Text>
-          {/* <Paging></Paging> */}
-          {/* <ProfilePage></ProfilePage> */}
+        <Text>This is {page.pageName}</Text>
+        {/* <Page></Page> */}
       </View>
 
     </View>
@@ -49,38 +101,7 @@ const App = () => {
   );
 };
 
-const Paging = () => {
-  return page.page;
-}
 
-const PageSelector = ({ value }) => (
-
-  <View >
-    <View >
-      <Text>{value}</Text>
-    </View>
-  </View>
-
-);
-
-const ProfilePage = () => (
-  <View >
-    <Text>Profile</Text>
-  </View>
-);
-
-
-const AboutPage = () => (
-  <View >
-    <Text>Profile</Text>
-  </View>
-);
-
-const HomePage = () => (
-  <View >
-    <Text>Profile</Text>
-  </View>
-);
 
 const styles = StyleSheet.create({
   container: {
@@ -102,4 +123,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
