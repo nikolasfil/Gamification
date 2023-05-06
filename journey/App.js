@@ -1,66 +1,32 @@
-import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-
-import Header from './components/header';
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
 
 
-export default function App() {
-  
-  const [todos, setTodos] = useState([
-    { text: 'buy coffee', key: '1' },
-    { text: 'create an app', key: '2' },
-    { text: 'play on the switch', key: '3' },
-  ]);
-
-
-
+const App = () => {
   return (
     <View style={styles.container}>
-      {/* header */}
-      <Header />
-
-      <View style={styles.content}>
-        {/* todo form */}
-        <View style={styles.list}>
-
-          <FlatList
-            data={todos}
-            renderItem={({ item }) => (
-              <Text>{item.text}</Text>
-            )}
-          />
-
-        </View>
-        </View>
-      </View>
-
+      {/* <View style={styles.navigation}> */}
+        <Text > This is text</Text>
+      {/* </View> */}
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  content: {
-    padding: 40,
+  navigation: {
+    flex: 1,
+    // flexDirection: 'row',
+    // justifyContent: 'space-around',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    // justifyContent: 'center',
   },
-
-  list: {
-    marginTop: 20,
-  },
-
-  item: {
-    marginTop: 24,
-    padding: 30,
-    backgroundColor: 'pink',
-    fontSize: 24,
-    marginHorizontal: 10,
-    marginTop: 24
-
-  }
-
 });
+
+export default App;
