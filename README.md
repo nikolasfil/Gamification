@@ -10,3 +10,12 @@ The design can be seen in figma_link.txt .
 
 As far as the application is concerned, it was to be build with React-Native and javascript. 
 
+
+---
+
+Competitive-Geeks 
+
+Arvanitopoulos Leandros-Nikolaos 
+Skamantzoura Dimitra-Maria 
+Filippatos Nikolaos
+
