@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, Text, Button } from 'react-native';
 
 
 const App = () => {
 
-  const [pages,setPage] = useState([
-    {name: 'Home', page: HomePage},
-    {name: 'About', page: AboutPage},
-    {name: 'Profile', page: ProfilePage},
+  const [pages, setPages] = useState([
+    { pageName: 'Home', page: HomePage },
+    { pageName: 'About', page: AboutPage },
+    { pageName: 'Profile', page: ProfilePage },
   ]);
+
+  const [page, setPage] = useState({pageName:'Home',page:HomePage});
 
 
   const clickMenu = () => {
@@ -16,14 +18,27 @@ const App = () => {
   }
 
   return (
+    <View style={styles.container}>
+      <View style={styles.navigation}>
 
-    <View style={styles.navigation}>
-      <Text>Home</Text>
+        {
+          pages.map((item) => {
+            return (
+              <Button title={item.pageName} onPress={(item) => {
+                setPage({pageName:item.pageName,page:item.page})
+              }}/>
+            )
 
-      <PageSelector
-        value='test' 
-        >
-      </PageSelector>
+          })}
+      </View>
+
+        
+      <View style={styles.container}>
+        <Text>THis is {pages.pageName}</Text>
+          {/* <Paging></Paging> */}
+          {/* <ProfilePage></ProfilePage> */}
+      </View>
+
     </View>
 
     // <PageSelector>
@@ -34,11 +49,13 @@ const App = () => {
   );
 };
 
+const Paging = () => {
+  return page.page;
+}
 
-const PageSelector = ({value}) => (
+const PageSelector = ({ value }) => (
 
   <View >
-
     <View >
       <Text>{value}</Text>
     </View>
@@ -48,21 +65,21 @@ const PageSelector = ({value}) => (
 
 const ProfilePage = () => (
   <View >
-      <Text>Profile</Text>
-    </View>
+    <Text>Profile</Text>
+  </View>
 );
 
 
 const AboutPage = () => (
   <View >
-      <Text>Profile</Text>
-    </View>
+    <Text>Profile</Text>
+  </View>
 );
 
 const HomePage = () => (
   <View >
-      <Text>Profile</Text>
-    </View>
+    <Text>Profile</Text>
+  </View>
 );
 
 const styles = StyleSheet.create({
