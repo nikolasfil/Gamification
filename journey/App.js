@@ -2,6 +2,28 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, Button } from 'react-native';
 
 
+
+const ProfilePage = () => (
+  <View >
+    <Text>Profile</Text>
+  </View>
+);
+
+
+const AboutPage = () => (
+  <View >
+    <Text>Profile</Text>
+  </View>
+);
+
+const HomePage = () => (
+  <View >
+    <Text>Profile</Text>
+  </View>
+);
+
+
+
 export default App = () => {
 
   const [pages, setPages] = useState([
@@ -23,8 +45,6 @@ export default App = () => {
   const clickButton = (item) => {
     // console.log(event)
     if (item) {
-
-      console.log(item.pagesName)
       setPage({ pageName: item.pagesName, pageFunction: item.pagesFunction })
     }
     else {
@@ -33,40 +53,7 @@ export default App = () => {
   }
 
 
-  const Paging = () => {
-    return page.page;
-  }
-
-  const PageSelector = ({ value }) => (
-
-    <View >
-      <View >
-        <Text>{value}</Text>
-      </View>
-    </View>
-
-  );
-
-  const ProfilePage = () => (
-    <View >
-      <Text>Profile</Text>
-    </View>
-  );
-
-
-  const AboutPage = () => (
-    <View >
-      <Text>Profile</Text>
-    </View>
-  );
-
-  const HomePage = () => (
-    <View >
-      <Text>Profile</Text>
-    </View>
-  );
-
-
+  
 
   return (
     <View style={styles.container}>
