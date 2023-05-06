@@ -20,7 +20,12 @@ Pages:
 		-Settings/Customization:
 			Dark Mode
 		-About Us
+		-Destination
 	•User page(same but from right to left)
+		-NickName
+		-Badges (Historian,Casual Traveller,Slanguist)
+		-Cities explored
+		
 	•Stage page (you click start)
 	•Location page (when clicking on a location, a drag up page)
 	
