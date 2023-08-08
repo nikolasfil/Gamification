@@ -1,4 +1,4 @@
-## Gamification 
+## Gamification
 
 This is the repository for the EESTEC Challenge of 2023 
 
@@ -16,6 +16,8 @@ As far as the application is concerned, it was to be build with React-Native and
 Competitive-Geeks 
 
 Arvanitopoulos Leandros-Nikolaos 
+
 Skamantzoura Dimitra-Maria 
+
 Filippatos Nikolaos
 
